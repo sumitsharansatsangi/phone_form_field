@@ -9,7 +9,9 @@ void main() {
     group('Without internationalization', () {
       final app = MaterialApp(
         home: Scaffold(
-          body: CountrySelector(onCountrySelected: (c) {}),
+          body: CountrySelector(
+            onCountrySelected: (c) {},
+          ),
         ),
       );
 
@@ -47,7 +49,9 @@ void main() {
         ],
         supportedLocales: const [Locale('es', '')],
         home: Scaffold(
-          body: CountrySelector(onCountrySelected: (c) {}),
+          body: CountrySelector(
+            onCountrySelected: (c) {},
+          ),
         ),
       );
 

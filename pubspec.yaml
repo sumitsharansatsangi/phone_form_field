@@ -1,11 +1,10 @@
 name: phone_form_field
 description: Flutter phone input integrated with flutter internationalization
-version: 7.1.0
-publish_to: none
+version: 8.1.0
 homepage: https://github.com/cedvdb/phone_form_field
 
 environment:
-  sdk: ">=2.16.1 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
 
 dependencies:

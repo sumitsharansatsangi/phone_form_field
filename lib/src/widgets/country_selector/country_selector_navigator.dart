@@ -242,17 +242,16 @@ class SearchDelegateNavigator extends CountrySelectorNavigator {
     ScrollController? scrollController,
   }) {
     return CountrySelectorSearchDelegate(
-      onCountrySelected: onCountrySelected,
-      scrollController: scrollController,
-      addFavoritesSeparator: addSeparator,
-      countries: countries,
-      favoriteCountries: favorites ?? [],
-      noResultMessage: noResultMessage,
-      searchAutofocus: searchAutofocus,
-      showCountryCode: showCountryCode,
-      titleStyle: titleStyle,
-      subtitleStyle: subtitleStyle,
-    );
+        onCountrySelected: onCountrySelected,
+        scrollController: scrollController,
+        addFavoritesSeparator: addSeparator,
+        countries: countries,
+        favoriteCountries: favorites ?? [],
+        noResultMessage: noResultMessage,
+        searchAutofocus: searchAutofocus,
+        showCountryCode: showCountryCode,
+        titleStyle: titleStyle,
+        subtitleStyle: subtitleStyle,);
   }
 
   @override
@@ -303,7 +302,7 @@ class BottomSheetNavigator extends CountrySelectorNavigator {
     final ctrl = showBottomSheet(
       context: context,
       builder: (_) => MediaQuery(
-        data: MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+        data: MediaQueryData.fromView(View.of(context)),
         child: SafeArea(
           child: _getCountrySelector(
             onCountrySelected: (country) {
@@ -353,7 +352,9 @@ class ModalBottomSheetNavigator extends CountrySelectorNavigator {
         );
 
   @override
-  Future<Country?> navigate(BuildContext context) {
+  Future<Country?> navigate(
+    BuildContext context,
+  ) {
     return showModalBottomSheet<Country>(
       context: context,
       builder: (_) => SizedBox(

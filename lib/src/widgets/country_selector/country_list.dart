@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:phone_form_field/src/helpers/country_finder.dart';
 
 import '../../../l10n/generated/phone_field_localization.dart';
-import '../../models/country.dart';
+import 'country.dart';
+import 'country_finder.dart';
 
 class CountryList extends StatelessWidget {
   /// Callback function triggered when user select a country

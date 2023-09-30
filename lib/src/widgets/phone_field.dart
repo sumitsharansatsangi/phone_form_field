@@ -1,9 +1,8 @@
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phone_form_field/src/constants/patterns.dart';
-import 'package:phone_form_field/src/models/phone_field_controller.dart';
+import 'package:phone_form_field/src/controllers/phone_field_controller.dart';
 
 import '../../phone_form_field.dart';
 
@@ -15,6 +14,7 @@ part 'phone_field_state.dart';
 class PhoneField extends StatefulWidget {
   final PhoneFieldController controller;
   final bool showFlagInInput;
+  final bool showIsoCodeInInput;
   final bool showDialCode;
   final String? errorText;
   final TextStyle? flagStyle;
@@ -115,6 +115,7 @@ class PhoneField extends StatefulWidget {
     required this.enableIMEPersonalizedLearning,
     required this.inputFormatters,
     required this.showDialCode,
+    required this.showIsoCodeInInput,
   }) : super(key: key);
 
   @override
