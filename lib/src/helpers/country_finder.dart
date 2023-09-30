@@ -1,9 +1,8 @@
 // responsible of searching through the country list
 
 import 'package:diacritic/diacritic.dart';
-import 'package:phone_form_field/src/models/iso_code.dart';
+import 'package:phone_form_field/phone_form_field.dart';
 
-import '../models/country.dart';
 
 class CountryFinder {
   late final List<Country> _allCountries;
@@ -80,4 +79,14 @@ class CountryFinder {
       // puts the ones that begin by txt first
       ..sort(compareCountries);
   }
+  static String generateFlagEmojiUnicode(String countryCode) {
+    const base = 127397;
+
+    return countryCode.codeUnits
+        .map((e) => String.fromCharCode(base + e))
+        .toList()
+        .reduce((value, element) => value + element)
+        .toString();
+  }
+
 }

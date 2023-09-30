@@ -1,4 +1,3 @@
-import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -56,10 +55,6 @@ void main() {
         expect(find.byType(CountryCodeChip), findsWidgets);
       });
 
-      testWidgets('Should display flag', (tester) async {
-        await tester.pumpWidget(getWidget());
-        expect(find.byType(CircleFlag), findsWidgets);
-      });
     });
 
     group('Country code', () {
@@ -76,11 +71,6 @@ void main() {
       testWidgets('Should have a default country', (tester) async {
         await tester.pumpWidget(getWidget(defaultCountry: IsoCode.FR));
         expect(find.text('+ 33'), findsWidgets);
-      });
-
-      testWidgets('Should hide flag', (tester) async {
-        await tester.pumpWidget(getWidget(showFlagInInput: false));
-        expect(find.byType(CircleFlag), findsNothing);
       });
 
       testWidgets('Should format when shouldFormat is true', (tester) async {

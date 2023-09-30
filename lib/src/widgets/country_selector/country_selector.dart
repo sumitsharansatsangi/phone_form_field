@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phone_form_field/l10n/generated/phone_field_localization.dart';
 import 'package:phone_form_field/l10n/generated/phone_field_localization_en.dart';
 import 'package:phone_form_field/src/helpers/localized_country_registry.dart';
-import 'package:phone_form_field/src/models/iso_code.dart';
+import 'package:phone_numbers_parser/phone_numbers_parser.dart';
 
 import '../../helpers/country_finder.dart';
 import '../../models/country.dart';
@@ -58,7 +58,7 @@ class CountrySelector extends StatefulWidget {
 
   /// The [Color] of the Search Icon in the Search Box
   final Color? searchBoxIconColor;
-  final double flagSize;
+  final TextStyle? flagStyle;
 
   const CountrySelector({
     Key? key,
@@ -76,7 +76,7 @@ class CountrySelector extends StatefulWidget {
     this.searchBoxDecoration,
     this.searchBoxTextStyle,
     this.searchBoxIconColor,
-    this.flagSize = 40,
+    this.flagStyle,
   }) : super(key: key);
 
   @override
@@ -149,7 +149,7 @@ class CountrySelectorState extends State<CountrySelector> {
             countries: _countryFinder.filteredCountries,
             showDialCode: widget.showCountryCode,
             onTap: widget.onCountrySelected,
-            flagSize: widget.flagSize,
+            flagStyle: widget.flagStyle,
             scrollController: widget.scrollController,
             scrollPhysics: widget.scrollPhysics,
             noResultMessage: widget.noResultMessage,

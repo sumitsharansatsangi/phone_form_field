@@ -17,7 +17,7 @@ abstract class CountrySelectorNavigator {
   final TextStyle? searchBoxTextStyle;
   final Color? searchBoxIconColor;
   final ScrollPhysics? scrollPhysics;
-  final double flagSize;
+  final TextStyle? flagStyle;
   final bool useRootNavigator;
 
   const CountrySelectorNavigator({
@@ -34,7 +34,7 @@ abstract class CountrySelectorNavigator {
     this.searchBoxTextStyle,
     this.searchBoxIconColor,
     this.scrollPhysics,
-    this.flagSize = 40,
+    this.flagStyle,
     this.useRootNavigator = true,
   });
 
@@ -59,7 +59,7 @@ abstract class CountrySelectorNavigator {
       searchBoxTextStyle: searchBoxTextStyle,
       searchBoxIconColor: searchBoxIconColor,
       scrollPhysics: scrollPhysics,
-      flagSize: flagSize,
+      flagStyle: flagStyle,
     );
   }
 
@@ -139,7 +139,7 @@ abstract class CountrySelectorNavigator {
     List<IsoCode>? favorites,
     bool addSeparator,
     bool showCountryCode,
-    double flagSize,
+    TextStyle? flagStyle,
     bool sortCountries,
     String? noResultMessage,
     bool searchAutofocus,
@@ -383,7 +383,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
     bool addSeparator = true,
     bool showCountryCode = true,
     bool sortCountries = false,
-    double flagSize = 40,
+    TextStyle? flagStyle,
     String? noResultMessage,
     bool searchAutofocus = kIsWeb,
     TextStyle? subtitleStyle,
@@ -407,7 +407,7 @@ class DraggableModalBottomSheetNavigator extends CountrySelectorNavigator {
           searchBoxTextStyle: searchBoxTextStyle,
           searchBoxIconColor: searchBoxIconColor,
           scrollPhysics: scrollPhysics,
-          flagSize: flagSize,
+          flagStyle: flagStyle,
         );
 
   @override

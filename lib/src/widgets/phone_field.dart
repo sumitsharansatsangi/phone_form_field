@@ -17,7 +17,7 @@ class PhoneField extends StatefulWidget {
   final bool showFlagInInput;
   final bool showDialCode;
   final String? errorText;
-  final double flagSize;
+  final TextStyle? flagStyle;
   final InputDecoration decoration;
   final bool isCountrySelectionEnabled;
   final bool isCountryChipPersistent;
@@ -71,7 +71,7 @@ class PhoneField extends StatefulWidget {
     required this.controller,
     required this.showFlagInInput,
     required this.selectorNavigator,
-    required this.flagSize,
+    this.flagStyle,
     required this.errorText,
     required this.decoration,
     required this.isCountrySelectionEnabled,

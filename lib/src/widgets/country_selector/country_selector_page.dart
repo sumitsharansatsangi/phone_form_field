@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phone_form_field/l10n/generated/phone_field_localization.dart';
 import 'package:phone_form_field/l10n/generated/phone_field_localization_en.dart';
 import 'package:phone_form_field/src/helpers/localized_country_registry.dart';
-import 'package:phone_form_field/src/models/iso_code.dart';
+import 'package:phone_numbers_parser/phone_numbers_parser.dart';
 
 import '../../helpers/country_finder.dart';
 import '../../models/country.dart';
@@ -45,7 +45,7 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
 
   /// whether the search input is auto focussed
   final bool searchAutofocus;
-  final double flagSize;
+  final TextStyle? flagStyle;
 
   LocalizedCountryRegistry? _localizedCountryRegistry;
 
@@ -66,7 +66,7 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
     List<IsoCode> favoriteCountries = const [],
     List<IsoCode>? countries,
     this.searchAutofocus = kIsWeb,
-    this.flagSize = 40,
+    this.flagStyle,
     this.titleStyle,
     this.subtitleStyle,
   })  : countriesIso = countries ?? IsoCode.values,
@@ -122,7 +122,7 @@ class CountrySelectorSearchDelegate extends SearchDelegate<Country> {
       countries: _countryFinder.filteredCountries,
       showDialCode: showCountryCode,
       onTap: onCountrySelected,
-      flagSize: flagSize,
+      flagStyle: flagStyle,
       scrollController: scrollController,
       scrollPhysics: scrollPhysics,
       noResultMessage: noResultMessage,

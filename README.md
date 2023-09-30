@@ -42,7 +42,7 @@ PhoneFormField(
   isCountrySelectionEnabled: true, // default
   countrySelectorNavigator: CountrySelectorNavigator.bottomSheet(),
   showFlagInInput: true,  // default
-  flagSize: 16,           // default
+  flagStyle: Theme.of(context).textTheme.labelLarge,           // default
   autofillHints: [AutofillHints.telephoneNumber], // default to null
   enabled: true,          // default
   autofocus: false,       // default
